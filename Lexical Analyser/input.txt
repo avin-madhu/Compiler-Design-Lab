@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    // comment
+
+    /* This is a multiline 
+        comment which is to be 
+        ignored
+     */
+
+    int a = 10;
+
+    //another comment
+
+    printf("hello World");
+    printf(a);
+
+}
