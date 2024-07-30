@@ -30,8 +30,8 @@ int main()
     int isString = 0;
     int flag = 0; // to check wether keyword or identifiers
     char word[30];
-    char ch;
-    char keywords[30][30] = {"int", "main", "stdio", "include", "printf", "while", "for"};
+    char ch; // to read each charcter
+    char keywords[30][30] = {"int", "main", "stdio", "include", "printf", "while", "for", "return"};
 
     printf("LineNo:\t\tTokenNo:\t\tToken\t\tLexeme\n");
 
@@ -40,16 +40,19 @@ int main()
         i = 0;
         if (isOperator(ch))
         {
+            // to check for comments
             if (ch == '/')
             {
                 char next = fgetc(input);
+                // for single line comments
                 if (next == '/')
                 {
                     while ((ch = fgetc(input)) != '\n' && ch != EOF)
                     {
-                        // skip the characters
+                        // skip the characters in the comments
                     }
                 }
+                // for multine comments
                 else if(next == '*')
                 {
                     while(1)
@@ -68,6 +71,7 @@ int main()
             }
             else
             {
+                // for normal / operation
                 ungetc(ch, input);
                 printf("%d\t\t%d\t\tOperator\t\t%c \n", line_number, no_of_tokens, ch);
                 no_of_tokens++;
@@ -75,8 +79,10 @@ int main()
         }
         else if (isSpecialSymbol(ch))
         {
+            // to notify a string has a started 
             if (ch == '"')
             {
+                // if 1 it changes to 0 and viceversa
                 isString = (1 + isString) % 2;
             }
             printf("%d\t\t%d\t\tSpecial Symbol\t\t%c \n", line_number, no_of_tokens, ch);
