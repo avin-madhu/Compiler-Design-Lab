@@ -1,3 +1,5 @@
+/* A program to read a source code and identify the tokens in it and the print the information, the program ignores single and multiline comments. */
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
