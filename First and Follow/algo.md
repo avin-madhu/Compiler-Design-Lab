@@ -1,4 +1,4 @@
-## Alorithm
+## Algorithm
 
 ### First ( )
 
