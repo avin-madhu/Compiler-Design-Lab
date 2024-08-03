@@ -82,7 +82,7 @@ int main()
   printf("Enter the number of productions: ");
   scanf("%d", &number_of_productions);
 
-  printf("Enter the productions: ");
+  printf("Enter the productions: \n");
   for(int i=0;i<number_of_productions;i++)
   {
      scanf("%s%c", &productions[i], &ch);
