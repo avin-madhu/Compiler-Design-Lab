@@ -1,4 +1,4 @@
-## Alorithm
+## Algorithm
 
 * <b>Step 1:</b> Start
 
