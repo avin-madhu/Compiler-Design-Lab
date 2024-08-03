@@ -1,79 +1,117 @@
 #include <stdio.h>
-#include <math.h>
 #include <string.h>
 #include <ctype.h>
-#include <stdlib.h>
-int n, m = 0, p, i = 0, j = 0;
-char a[10][10], f[10];
-void follow(char c);
-void first(char c);
-int main()
-{
 
-  int i, z;
-  char c, ch;
-  // clrscr();
-  printf("Enter the no of prooductions:\n");
-  scanf("%d", &n);
-  printf("Enter the productions:\n");
-  for (i = 0; i < n; i++)
-    scanf("%s%c", a[i], &ch);
-  do
-  {
-    m = 0;
-    printf("Enter the elemets whose first & follow is to be found:");
-    scanf("%c", &c);
-    first(c);
-    printf("First(%c)={", c);
-    for (i = 0; i < m; i++)
-      printf("%c", f[i]);
-    printf("}\n");
-    strcpy(f, " ");
-    // flushall();
-    m = 0;
-    follow(c);
-    printf("Follow(%c)={", c);
-    for (i = 0; i < m; i++)
-      printf("%c", f[i]);
-    printf("}\n");
-    printf("Continue(0/1)?");
-    scanf("%d%c", &z, &ch);
-  } while (z == 1);
-  return (0);
+int number_of_productions, choice, r=0;
+char productions[30][30], ch, result[30];
+void first(char c);
+void follow(char c);
+
+void add_to_result(char c)
+{
+   for(int i=0;i<r;i++)
+   {
+    if(c == result[i])
+    {
+      return;
+    }
+   }
+   result[r++] = c;
 }
+
 void first(char c)
 {
-  int k;
-  if (!isupper(c))
-    f[m++] = c;
-  for (k = 0; k < n; k++)
+  if(islower(c) || c == '#')
   {
-    if (a[k][0] == c)
-    {
-      if (a[k][2] == '$')
-        follow(a[k][0]);
-      else if (islower(a[k][2]))
-        f[m++] = a[k][2];
-      else
-        first(a[k][2]);
-    }
+    add_to_result(c);
+    return;
   }
-}
-void follow(char c)
-{
-  if (a[0][0] == c)
-    f[m++] = '$';
-  for (i = 0; i < n; i++)
+
+  for(int i=0;i<number_of_productions;i++)
   {
-    for (j = 2; j < strlen(a[i]); j++)
+    if(productions[i][0] == c)
     {
-      if (a[i][j] == c)
+      if(productions[i][2] == '#')
       {
-        if (a[i][j + 1] != '\0')
-          first(a[i][j + 1]);
-        if (a[i][j + 1] == '\0' && c != a[i][0])
-          follow(a[i][0]);
+        add_to_result('#');
+      }
+      else if (productions[i][2] == c)
+      {
+        return;
+      }
+      else if(islower(productions[i][2]))
+      {
+        add_to_result(productions[i][2]);
+      }
+      else
+      {
+         first(productions[i][2]);
       }
     }
   }
+}
+
+void follow(char c)
+{
+   if(productions[0][0] == c)
+   {
+      add_to_result('$');
+   }
+   for(int i=0;i<number_of_productions;i++)
+   {
+    for(int j=2;j<strlen(productions[i]);j++)
+    {
+      if(productions[i][j] == c)
+      {
+        if(productions[i][j+1] != '\0')
+        {
+          first(productions[i][j+1]);
+        }
+        if(productions[i][j+1] == '\0' && productions[i][0] != c)
+        {
+          follow(productions[i][0]);
+        }
+      }
+    }
+   }
+}
+
+int main()
+{
+  int input;
+  printf("Enter the number of productions: ");
+  scanf("%d", &number_of_productions);
+
+  printf("Enter the productions: ");
+  for(int i=0;i<number_of_productions;i++)
+  {
+     scanf("%s%c", &productions[i], &ch);
+  }
+  do
+  {
+    r = 0;
+    printf("Enter the character: ");
+    scanf("%c", &input);
+    first(input);
+    printf("First(%c): {",input);
+    for(int i=0;i<r;i++)
+    {
+      printf("%c,",result[i]);
+    }
+    printf("}\n");
+
+    strcpy(result, " ");
+
+    r = 0;
+    follow(input);
+    printf("Follow(%c): {",input);
+    for(int i=0;i<r;i++)
+    {
+      printf("%c,",result[i]);
+    }
+    printf("}\n");
+    printf("Wanna continue? (1/0): ");
+    scanf("%d%c", &choice,&ch);
+  } while (choice);
+  return 0;
 }
