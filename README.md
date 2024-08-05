@@ -1,6 +1,6 @@
 <h1 align="center">
 Compiler Design Lab (CSL411) - KTU 2024
-<h1>
+</h1>
 
 <div align="center">
   
