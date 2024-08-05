@@ -1,0 +1,9 @@
+First of E: ( i
+First of T: ( i
+First of F: ( i
+==================
+Follow of E: $ + )
+Follow of T: $ + ) *
+Follow of F: $ + ) *
+
+// This is the expected output format
