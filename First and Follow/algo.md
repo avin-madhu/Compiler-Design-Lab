@@ -5,7 +5,7 @@
 * <b>Step 1:</b> Start
 
 * <b>Step 2:</b> Check if the character is lowercase or it is an Epsilon.
-* <b>Step 3:</b> If step 1 is true stop else continue
+* <b>Step 3:</b> If step 2 is true stop else continue
 * <b>Step 4:</b> For any character of the start of the LHS that matches with the input character do step 5 to step  on the first character of it's RHS
 * <b>Step 5:</b> If it is an epsilon add it to the result
 * <b>Step 6:</b> If it is the same stop
