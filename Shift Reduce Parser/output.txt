@@ -1,0 +1,16 @@
+GRAMMAR is: 
+
+E->E+E
+E->E*E
+E->(E)
+E->id
+Enter the string:
+id+id
+Stack   input   action
+
+$id       +id   SHIFT -> id
+$E        +id   REDUCE TO E
+$E+        id   SHIFT -> +
+$E+id           SHIFT -> id
+$E+E            REDUCE TO E
+$E              REDUCE TO E

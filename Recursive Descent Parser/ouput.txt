@@ -1,0 +1,2 @@
+Enter the input string: (a+b)
+The string is accepted!

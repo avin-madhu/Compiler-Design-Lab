@@ -8,6 +8,7 @@ int main()
   puts("GRAMMAR is: \n\nE->E+E\nE->E*E\nE->(E)\nE->id");
   puts("Enter the string: ");
   gets(input_string);
+  printf("\n");
   input_length = strlen(input_string);
   strcpy(action, "SHIFT ->");
   puts("Stack\tinput\taction");

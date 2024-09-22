@@ -15,3 +15,4 @@
 * <b>Step 12:</b> Increment the variable tracking the current line number.
 * <b>Step 13:</b> Do step 2 to step 12 until the end of file is encountered.
 * <b>Step 14:</b> Stop
+

@@ -10,4 +10,5 @@ Compiler Design Lab (CSL411) - KTU 2024
 | 2     |First and Follow   | [Program](First%20and%20Follow/FirstandFollow.c)   | [Algorithm](First%20and%20Follow/algo.md)     |
 | 3     |Recursive Decent Parser  | [Program](Recursive%20Descent%20Parser/rdp.c)   | [Algorithm](Recursive%20Descent%20Parser/algo.md)     |
 | 4     |Shift Reducer Parser  | [Program](Shift%20Reduce%20Parser/srp.c)   | [Algorithm](Shift%20Reduce%20Parser/algo.md)     |
+| 5     |Intermediate Code Generation  | [Program](Intermediate%20Code%20Generation/icg.c)   | [Algorithm](Intermediate%20Code%20Generation/algo.md)     |
 </div>
