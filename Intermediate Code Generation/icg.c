@@ -47,7 +47,7 @@ void findopr() {
         if (str[i] == '/' || str[i] == '*') {
             k[j].pos = i;
             k[j].isUnary=0;
-            k[j++].op = '/';
+            k[j++].op = str[i];
         }
     }
     
