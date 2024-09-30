@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
 #include<string.h>
 
 int i=1, j=0, no=0, tmpch=90;
