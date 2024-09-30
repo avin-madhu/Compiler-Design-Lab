@@ -1,43 +1,43 @@
 // constant propagation is basically using a calculated constant instead of actually calculating the constant in the program to avoid unecessary computation.
-
 #include <stdio.h>
-#include <math.h>
-
+int choice;
+float r, perimeter;
+float PI = ((22.0/7.0)/100)*100*1; //  heavy calculation 
 int main()
-{
-
-    int choice;
-    float r,pi = floor((22.0/7.0));
-
-    do {
-    
-    printf("\n");
-    printf("\n1. Find the perimeter and Area of a circle without constant propagation");
-    printf("\n2. Find the perimeter and Area of a circle with constant propagation");
-    printf("\n3. Exit");
-    printf("Enter your choice: ");
+{ 
+  do 
+  {
+    printf("\n\n");
+    printf("1. Perimeter of a circle using constant propagation\n");
+    printf("2. Permieter of a circle without using constant propagation\n");
+    printf("3. exit\n\n");
+    printf("Enter your option: ");
     scanf("%d", &choice);
-    switch (choice)
+    switch(choice)
     {
-        case 1: 
-
-        printf("Enter th radius: ");
-        scanf("%f", &r);
-        printf("Perimeter: %0.2f\n", 2 * pi * r);
-        printf("Area: %0.2f", pi * r * r);
-        break;
-
-        case 2: 
-
-        printf("Enter th radius: ");
-        scanf("%f", &r);
-        printf("Perimeter: %0.2f\n", 2 * 3.14 * r);
-        printf("Area: %0.2f", 3.14 * r * r);
-        break;
-
+      case 1:
+      
+      printf("\n\nEnter the radius: ");
+      scanf("%f",&r);
+      perimeter = 2 * PI * r; // used the calculated value 
+      printf("Area: %0.2f",perimeter);
+      break;
+      
+      case 2:
+      
+      printf("\n\nEnter the radius: ");
+      scanf("%f",&r);
+      perimeter = 2 * 3.14 * r; // used the constant directly 
+      printf("Area: %0.2f",perimeter);
+      break;
+      
+      case 3: break;
+      
+      default: 
+      printf("\nInvalid Input!\n");
     }
-
-    }while (choice != 3);
-
-    return 0;
+  
+  }while(choice != 3);
+  
+ return 0;
 }

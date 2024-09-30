@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
 #include<string.h>
 
 int i=1, j=0, no=0, tmpch=90;
@@ -47,7 +46,7 @@ void findopr() {
         if (str[i] == '/' || str[i] == '*') {
             k[j].pos = i;
             k[j].isUnary=0;
-            k[j++].op = '/';
+            k[j++].op = str[i];
         }
     }
     
