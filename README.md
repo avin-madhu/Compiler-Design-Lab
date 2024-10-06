@@ -12,5 +12,5 @@ Compiler Design Lab (CSL411) - KTU 2024
 | 4     |Shift Reducer Parser  | [Program](Shift%20Reduce%20Parser/srp.c)   | [Algorithm](Shift%20Reduce%20Parser/algo.md)     |
 | 5     |Intermediate Code Generation  | [Program](Intermediate%20Code%20Generation/icg.c)   | [Algorithm](Intermediate%20Code%20Generation/algo.md)     |
 | 6     |Constant Propagation  | [Program](Constant%20Propagation/cp.c)   | [Algorithm](Constant%20Propagation/algo.md)     |
-| 7     | DFA  Minimisation  | [Program](DFA%20Minimisation/dfam.c)   | [Algorithm](DFA%20Minimisation/algo.md)     |
+| 7     | Esilon Closure | [Program](Epsilon%20Closure/ep.c)   | [Algorithm](Epsilon%20Closure/algo.md)     |
 </div>
