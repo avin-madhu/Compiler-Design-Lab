@@ -29,6 +29,7 @@ int main()
     int no_of_tokens = 1;
     int line_number = 1;
     int i = 0;
+    int is_division_operator = 1;
     int isString = 0;
     int flag = 0; // to check wether keyword or identifiers
     char word[30];
@@ -49,6 +50,7 @@ int main()
                 // for single line comments
                 if (next == '/')
                 {
+                    is_division_operator = 0;
                     while ((ch = fgetc(input)) != '\n' && ch != EOF)
                     {
                         // skip the characters in the comments
@@ -57,6 +59,7 @@ int main()
                 // for multine comments
                 else if(next == '*')
                 {
+                    is_division_operator = 0;
                     while(1)
                     {
                        ch = fgetc(input);
@@ -70,13 +73,13 @@ int main()
                        }
                     }
                 }
-            }
-            else
-            {
-                // for normal / operation
-                ungetc(ch, input);
-                printf("%d\t\t%d\t\tOperator\t\t%c \n", line_number, no_of_tokens, ch);
-                no_of_tokens++;
+                else
+                {
+                    ungetc(next,input);
+                    printf("%d\t\t%d\t\tOperator\t\t%c \n", line_number, no_of_tokens, ch);
+                    no_of_tokens++;
+                    is_division_operator = 1;
+                }
             }
         }
         else if (isSpecialSymbol(ch))
