@@ -1,0 +1,4 @@
+optimized code:
+4 + a t2
+t2 + b t3
+4 + t2 t4

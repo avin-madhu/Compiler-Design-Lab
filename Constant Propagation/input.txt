@@ -1,0 +1,6 @@
+Enter the number of expression: 4
+Enter the expression:
+1 + 3 t1
+t1 + a t2
+t2 + b t3
+t1 + t2 t4
