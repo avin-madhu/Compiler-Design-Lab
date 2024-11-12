@@ -14,7 +14,7 @@ int main()
   printf("Enter the number of transitions: ");
   scanf("%d", &number_of_transistions);
 
-  // format i symbol j (use e for epsilon)
+  // format: i symbol j (use e for epsilon)
   printf("Enter the transitions: \n\n");
   int m,n;
   char symbol;
