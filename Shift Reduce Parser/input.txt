@@ -1,0 +1,6 @@
+inputs to try:
+
+1) id+id // accept
+2) E-E   // reject
+3) (id+id)*id // accept
+4) id-id*id // reject

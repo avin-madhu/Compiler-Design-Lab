@@ -33,6 +33,11 @@ int main()
         check();
     }
   }
+    if(strlen(stack)>2)
+        strcpy(action,"REJECT");
+    else
+        strcpy(action, "STOP");
+    printf("\n$%s\t%s\t%s %c", stack, input_string, action, stack[i]);
   return 0;
 }
 

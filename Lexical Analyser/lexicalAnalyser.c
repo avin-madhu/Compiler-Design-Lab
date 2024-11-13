@@ -34,7 +34,7 @@ int main()
     int flag = 0; // to check wether keyword or identifiers
     char word[30];
     char ch; // to read each charcter
-    char keywords[30][30] = {"int", "main", "stdio", "include", "printf", "while", "for", "return"};
+    char keywords[30][30] = {"int", "main", "stdio", "include", "printf", "while", "for", "return", "#"}; // # to mark the end of keyword array
 
     printf("LineNo:\t\tTokenNo:\t\tToken\t\tLexeme\n");
 
@@ -81,6 +81,11 @@ int main()
                     is_division_operator = 1;
                 }
             }
+            else{
+                printf("%d\t\t%d\t\tOperator\t\t%c \n", line_number, no_of_tokens, ch);
+                no_of_tokens++;
+                is_division_operator = 1;
+            }
         }
         else if (isSpecialSymbol(ch))
         {
@@ -113,7 +118,7 @@ int main()
             }
             word[i] = '\0';
             char temp[30];
-            for (int i = 0; word[i] != '\0'; i++)
+            for (int i = 0; keywords[i] != '#'; i++)
             {
                 if (strcmp(keywords[i], word) == 0)
                 {
